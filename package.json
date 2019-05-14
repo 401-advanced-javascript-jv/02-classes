@@ -13,6 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node index.js",
     "lint": "eslint **/*.js",
     "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
     "test": "jest --verbose --coverage"
