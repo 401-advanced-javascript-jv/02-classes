@@ -1,8 +1,10 @@
 'use strict';
 
 const VehicleConstructor = require('../vehicle-constructor.js');
+const VehicleClass = require('../vehicle-class.js');
+const VehicleFactory = require('../vehicle-factory.js');
 
-let types = ['Constructor'];
+let types = ['Constructor', 'Class', 'Factory'];
 
 describe('Vehicles', () => {
 
@@ -12,6 +14,10 @@ describe('Vehicles', () => {
       switch(type) {
         case 'Constructor':
           return new VehicleConstructor.Car('foo');
+        case 'Class':
+          return new VehicleClass.Car('bar');
+        case 'Factory':
+          return VehicleFactory.Car('meep');
         default:
           return {};
       }
@@ -46,6 +52,10 @@ describe('Vehicles', () => {
       switch(type) {
         case 'Constructor':
           return new VehicleConstructor.Motorcycle('foo');
+        case 'Class':
+          return new VehicleClass.Motorcycle('bar');
+        case 'Factory':
+          return VehicleFactory.Motorcycle('meep');
         default:
           return {};
       }
@@ -67,7 +77,7 @@ describe('Vehicles', () => {
         expect(motorcycle.stop()).toBeTruthy();
       });
 
-      it(`${type} (Motorcycle) cannot do a wheelie`, () => {
+      it(`${type} (Motorcycle) can do a wheelie`, () => {
         expect(motorcycle.wheelie()).toBeTruthy();
       });
       
