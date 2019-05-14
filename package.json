@@ -13,7 +13,8 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint **/*.js",
-    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
+    "test": "jest --verbose --coverage"
   },
   "keywords": [],
   "author": "",
