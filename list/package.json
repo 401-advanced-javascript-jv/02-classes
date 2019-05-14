@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "test": "jest ./__tests__/list.test.js --verbose --coverage"
+  }
+}
