@@ -8,14 +8,12 @@
   },
   "dependencies": {
     "eslint": "^5.16.0",
-    "jest": "^24.8.0",
-    "jsdoc": "^3.6.2"
+    "jest": "^24.8.0"
   },
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
     "lint": "eslint **/*.js",
-    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
     "test": "jest --verbose --coverage"
   },
   "keywords": [],
