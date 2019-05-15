@@ -1,7 +1,6 @@
 'use strict';
 
 class List {
-
   constructor() {
     this.length = 0;
     this.data = {};
@@ -34,7 +33,8 @@ class List {
    */
   shift() {
     let returnValue = this.data[0];
-    for (let i = 0; i < this.length - 1; i++) { // needs to go to length - 1 because accessing data[length] is out of bounds
+    for (let i = 0; i < this.length - 1; i++) {
+      // needs to go to length - 1 because accessing data[length] is out of bounds
       this.data[i] = this.data[i + 1];
     }
     delete this.data[--this.length];
@@ -51,9 +51,22 @@ class List {
       this.data[i] = this.data[i - 1];
     }
     this.data[0] = item;
-    return ++this.length;   
+    return ++this.length;
   }
 
+  /**
+   * Performs a given callback function on each element in the list
+   * @param {function} callback(currentValue[, index[, list]])
+   * @param currentValue current list item
+   * @param index (optional) current index
+   * @param list (optional) the data list which forEach was called on
+   */
+  forEach(callback) {
+    for (let i = 0; i < this.length; i++) {
+      callback(this.data[i], i this.data);
+    }
+    return undefined;
+  }
 }
 
 module.exports = List;

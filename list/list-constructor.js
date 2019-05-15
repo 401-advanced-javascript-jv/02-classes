@@ -60,6 +60,7 @@ List.prototype.forEach = function (callback) {
   for (let i = 0; i < this.length; i++) {
     callback(this.data[i], i, this.data);
   }
+  return undefined;
 };
 
 module.exports = List;
