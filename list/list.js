@@ -63,7 +63,7 @@ class List {
    */
   forEach(callback) {
     for (let i = 0; i < this.length; i++) {
-      callback(this.data[i], i this.data);
+      callback(this.data[i], i, this.data);
     }
     return undefined;
   }
