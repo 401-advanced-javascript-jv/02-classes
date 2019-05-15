@@ -8,24 +8,23 @@ class List {
   }
 
   /**
-   * Add item to the end of the list
+   * Add item to the end of the list and return the list's new length
    * @param item
+   * @returns {number} new array length
    */
   push(item) {
     // Add an item to the end
     this.data[this.length++] = item;
+    return this.length;
   }
 
   /**
-   * // Remove an item from the end of the list and return it's value
+   * // Remove an item from the end of the list and return its value
    * @returns {*}
    */
   pop() {
-    console.log('pop');
-    console.log(this.data);
-    let returnValue = this.data[this.length - 1];
-    delete this.data[this.length - 1];
-    this.length--;
+    let returnValue = this.data[--this.length];
+    delete this.data[this.length];
     return returnValue;
   }
 
@@ -34,12 +33,25 @@ class List {
    * @returns {*}
    */
   shift() {
-    for (let i = 0; i < this.length; i++) {
-      this[i-1] = this[i];
+    let returnValue = this.data[0];
+    for (let i = 0; i < this.length - 1; i++) { // needs to go to length - 1 because accessing data[length] is out of bounds
+      this.data[i] = this.data[i + 1];
     }
-    let returnValue = this.data[-1];
-    delete this.data[-1];
+    delete this.data[--this.length];
     return returnValue;
+  }
+
+  /**
+   * Adds an item to the front of the list and returns the new length of the array
+   * @param item
+   * @returns {number} new array length
+   */
+  unshift(item) {
+    for (let i = 0; i < this.length; i++) {
+      this.data[this.length - i] = this.data[this.length - i - 1];
+    }
+    this.data[0] = item;
+    return ++this.length;   
   }
 
 }
