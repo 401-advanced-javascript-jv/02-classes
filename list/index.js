@@ -1,6 +1,6 @@
 'use strict';
 
-const List = require('./list.js');
+const List = require('./list-constructor.js');
 
 // let stuff = new List();
 // stuff.push('a');
@@ -29,4 +29,10 @@ arry.push('nope');
 console.log(arry);
 
 arry.unshift('blue');
+console.log(arry);
+console.log(arry.pop());
+console.log(arry.shift());
+console.log(arry.pop());
+console.log(arry.pop());
+console.log(arry.shift());
 console.log(arry);

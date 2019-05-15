@@ -18,10 +18,30 @@ List.prototype.push = function(item) {
  * @returns {*}
  */
 List.prototype.pop = function() {
-  let returnValue = this.data[this.length];
+  let returnValue = this.data[--this.length];
   delete this.data[this.length];
-  this.length--;
   return returnValue;
+};
+
+/**
+ * Remove the first item from the list and return its value
+ * @returns {*}
+ */
+List.prototype.shift = function () {
+  let returnValue = this.data[0];
+  for (let i = 0; i < this.length - 1; i++) {
+    this.data[i] = this.data[i + 1];
+  }
+  delete this.data[--this.length];
+  return returnValue;
+};
+
+List.prototype.unshift = function (item) {
+  for (let i = this.length; i > 0; i--) {
+    this.data[i] = this.data[i - 1];
+  }
+  this.data[0] = item;
+  return ++this.length;
 };
 
 module.exports = List;

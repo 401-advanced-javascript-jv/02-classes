@@ -47,8 +47,8 @@ class List {
    * @returns {number} new array length
    */
   unshift(item) {
-    for (let i = 0; i < this.length; i++) {
-      this.data[this.length - i] = this.data[this.length - i - 1];
+    for (let i = this.length; i > 0; i--) {
+      this.data[i] = this.data[i - 1];
     }
     this.data[0] = item;
     return ++this.length;   
