@@ -13,8 +13,7 @@ class List {
    */
   push(item) {
     // Add an item to the end
-    this.data[this.length] = item;
-    this.length++;
+    this.data[this.length++] = item;
   }
 
   /**
@@ -22,9 +21,24 @@ class List {
    * @returns {*}
    */
   pop() {
-    let returnValue = this.data[this.length];
-    delete this.data[this.length];
+    console.log('pop');
+    console.log(this.data);
+    let returnValue = this.data[this.length - 1];
+    delete this.data[this.length - 1];
     this.length--;
+    return returnValue;
+  }
+
+  /**
+   * Remove the first item from the list and return its value
+   * @returns {*}
+   */
+  shift() {
+    for (let i = 0; i < this.length; i++) {
+      this[i-1] = this[i];
+    }
+    let returnValue = this.data[-1];
+    delete this.data[-1];
     return returnValue;
   }
 
