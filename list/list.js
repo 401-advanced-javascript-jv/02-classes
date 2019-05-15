@@ -42,9 +42,9 @@ class List {
   }
 
   /**
-   * Adds an item to the front of the list and returns the new length of the array
+   * Adds an item to the front of the list and returns the new length of the list
    * @param item
-   * @returns {number} new array length
+   * @returns {number} new list length
    */
   unshift(item) {
     for (let i = this.length; i > 0; i--) {

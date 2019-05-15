@@ -29,10 +29,5 @@ arry.push('nope');
 console.log(arry);
 
 arry.unshift('blue');
-console.log(arry);
-console.log(arry.pop());
-console.log(arry.shift());
-console.log(arry.pop());
-console.log(arry.pop());
-console.log(arry.shift());
-console.log(arry);
+
+arry.forEach((item, idx, list) => console.log(item + idx + list[0]));
